@@ -1,6 +1,5 @@
 import { Request,Response } from 'express';
-import { Controller, Proxy, proxyService } from "tarsus";
-import { request } from '../utils/proxyRequest';
+import { Controller, Proxy, TarsusProxyService } from "tarsus";
 
 @Controller("/gateway")
 class GateWayController {
@@ -15,23 +14,19 @@ class GateWayController {
     // }
   @Proxy("/tarususRpc")
   public tarsusRpcProxy(req: Request, res: Response) {
-    const { body,query } = req;
-    const merge = Object.assign({},body,query)
-    proxyService.transmit(merge, res);
+    TarsusProxyService.transmit(req, res);
   }
+    // proxy, data, url, method
     // 代理 Http服务
-    // query | body :{
-    // url: 远程端口地址
-    // method: 请求方法
-    // data
-    //}
+    // {
+      // proxy: 远程端口服务名称
+      // method: 请求方法
+      // url:请求路由
+      // data:方法体
+    // }
   @Proxy("/tarsusHttp")
   public tarsusHttpProxy(req: Request, res: Response) {
-    const { body,query } = req as any;
-    let data = Object.assign({},body,query)
-    request(data).then(ret=>{
-        res.json(ret)
-    })
+    TarsusProxyService.request(req, res);
   }
 }
 
