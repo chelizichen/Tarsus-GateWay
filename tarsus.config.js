@@ -12,6 +12,7 @@ module.exports = {
     },
   ],
   servant: {
-    project: "TarsusProxyServant -l node -t @tarsus/http -h 127.0.0.1 -p 9811",
+    // 微服务代理层的
+    project: "@DemoProxy/GateWay -l node -t @tarsus/http -h 127.0.0.1 -p 9811",
   },
 };

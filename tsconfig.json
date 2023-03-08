@@ -3,5 +3,6 @@
         "strictPropertyInitialization": false,
         "esModuleInterop":true,
         "downlevelIteration":true,
+        "lib": ["ESNext"]
     }
 }
