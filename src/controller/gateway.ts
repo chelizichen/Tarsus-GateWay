@@ -1,8 +1,13 @@
 import { Request, Response } from "express";
-import { Controller, Proxy, TarsusProxyService } from "tarsus";
+import { Controller, Inject, Post, Proxy, TarsusProxyService } from "tarsus";
+import { GateWayService } from "../service/gateway";
+import { ret } from "../utils/ret";
 
 @Controller("/gateway")
 class GateWayController {
+  @Inject(GateWayService)
+  GateWayService:GateWayService
+
   // 代理 微服务
   // {
   //     "interFace": 接口名,
@@ -15,6 +20,7 @@ class GateWayController {
   public tarsusRpcProxy(req: Request, res: Response) {
     TarsusProxyService.transmit(req, res);
   }
+
   // proxy, data, url, method
   // 代理 Http服务
   // {
@@ -26,6 +32,20 @@ class GateWayController {
   @Proxy("/tarsusHttp")
   public tarsusHttpProxy(req: Request, res: Response) {
     TarsusProxyService.request(req, res);
+  }
+
+  // 注册服务
+  // servantName = @TarsusDemoProject/JavaProxyDemo -l java -t @tarsus/http -h 127.0.0.1 -p 7098
+  // 拿到群组 注册对应微服务
+  // SADD TarsusDemoProject + servantName
+  @Post("/regist")
+  public async registService(req:Request){
+    const { servantName } = req.body;
+    console.log(req.body);
+    console.log(req.query);
+    
+    const data = await this.GateWayService.saveServer(servantName)
+    return ret.success(data)
   }
 }
 
