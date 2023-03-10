@@ -16,7 +16,7 @@ class GateWayController {
   //     "timeout": 超时时间,
   //     "proxy": 远程端口服务名称
   // }
-  @Proxy("/tarususRpc")
+  @Proxy("/tarsusRpc")
   public tarsusRpcProxy(req: Request, res: Response) {
     console.log("接收到请求");
     TarsusProxyService.transmit(req, res);
