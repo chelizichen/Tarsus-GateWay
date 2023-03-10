@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Controller, Inject, Post, Proxy, TarsusProxyService } from "tarsus";
+import { Controller, Get, Inject, Post, Proxy, TarsusProxyService } from "tarsus";
 import { GateWayService } from "../service/gateway";
 import { ret } from "../utils/ret";
 
@@ -18,6 +18,7 @@ class GateWayController {
   // }
   @Proxy("/tarususRpc")
   public tarsusRpcProxy(req: Request, res: Response) {
+    console.log("接收到请求");
     TarsusProxyService.transmit(req, res);
   }
 
@@ -39,7 +40,7 @@ class GateWayController {
   // 拿到群组 注册对应微服务
   // SADD TarsusDemoProject + servantName
   @Post("/regist")
-  public async registService(req:Request){
+  public async registService(req){
     const { servantName } = req.body;
     console.log(req.body);
     console.log(req.query);

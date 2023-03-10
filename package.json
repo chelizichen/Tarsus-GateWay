@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tarsus": "^1.1.5",
+    "tarsus": "^1.1.9",
     "typescript": "5.0.0-beta"
   }
 }
