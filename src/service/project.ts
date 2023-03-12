@@ -26,6 +26,10 @@ class ProjectService{
         let getAllServer = await this.TarsusCache.RedisTemplate.SMEMBERS(group)
         return getAllServer
     }
+
+    async add(group: string, serverName: string) {
+        return await this.TarsusCache.RedisTemplate.sAdd(group, serverName);
+    }
 }
 
 export {
