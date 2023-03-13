@@ -4,5 +4,5 @@
         "esModuleInterop":true,
         "downlevelIteration":true,
         "lib": ["ESNext","DOM"]
-    }
+    },
 }

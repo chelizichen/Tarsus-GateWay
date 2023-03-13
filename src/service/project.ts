@@ -21,9 +21,8 @@ class ProjectService{
         return true
     }
     
-    async getMembers(group: String) {
-        // @ts-ignore
-        let getAllServer = await this.TarsusCache.RedisTemplate.SMEMBERS(group)
+    async getMembers(group: string) {
+        let getAllServer = await this.TarsusCache.RedisTemplate.sMembers(group)
         return getAllServer
     }
 
