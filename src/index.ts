@@ -17,7 +17,6 @@ class TestApplication {
     loadController([GateWayController, ProjectController]);
     loadInit((app) => {
       const { loadWebpackDev } = require('tarsus-cli');
-      
       loadWebpackDev(app)
       // app.use(express.static("dist/app"));
 
