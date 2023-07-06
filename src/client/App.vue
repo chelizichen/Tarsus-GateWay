@@ -5,7 +5,6 @@
       <el-main style="margin-top: 70px;">
         <router-view></router-view>
       </el-main>
-      <!-- <Footer></Footer> -->
     </el-container>
   </div>
 </template>

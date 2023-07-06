@@ -42,6 +42,7 @@
     "style-loader": "^3.3.3",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",
+    "file-loader": "^6.2.0",
     "vue-loader": "^17.0.1"
   }
 }

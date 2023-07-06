@@ -19,7 +19,7 @@ module.exports = {
       }
     },
     clientChain: function (chain) {
-      chain.output.filename("bundle.js").end()
+      chain.output.filename("bundle.js").end();
     },
     serverChain: function (chain) {
 
