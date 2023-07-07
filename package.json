@@ -21,7 +21,7 @@
     "tarsus": "^1.3.0",
     "tarsus-cli": "^1.0.9",
     "typescript": "5.0.2",
-    "vue": "^3.2.37",
+    "vue": "3.2.37",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
@@ -29,7 +29,7 @@
     "@babel/preset-typescript": "^7.22.5",
     "@types/cors": "^2.8.12",
     "@types/node": "^20.3.3",
-    "@vue/compiler-sfc": "^3.2.36",
+    "@vue/compiler-sfc": "3.2.37",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.8.1",
     "less-loader": "^11.1.3",
