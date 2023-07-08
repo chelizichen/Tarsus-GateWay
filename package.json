@@ -26,6 +26,6 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "tarsus-loader": "1.0.0"
+    "tarsus-loader": "1.0.1"
   }
 }
