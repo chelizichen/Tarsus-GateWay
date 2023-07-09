@@ -11,12 +11,12 @@
 
 <script setup lang="ts">
 import Header from '@/components/header/index.vue'
-import TaroUser from './taro/TaroUser.taro';
+import TaroUser,{getUserById} from './taro/TaroUser';
 import { onMounted } from 'vue';
 
-onMounted(() => {
+onMounted(async () => {
   console.log(TaroUser);
-  
+  await getUserById({a:1})
 })
 </script>
 

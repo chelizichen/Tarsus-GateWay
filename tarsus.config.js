@@ -20,6 +20,15 @@ module.exports = {
     },
     clientChain: function (chain) {
       chain.output.filename("bundle.js").end();
+      chain.module
+      .rule('taro')
+      .test(/\.taro$/)
+      .use('tarsus-loader')
+      .loader('tarsus-loader')
+      .options({
+        http: '@/utils/axios',
+      });
+
     },
     serverChain: function (chain) {
 
