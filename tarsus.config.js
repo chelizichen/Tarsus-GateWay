@@ -48,6 +48,11 @@ module.exports = {
   ],
   servant: {
     // 微服务代理层的
-    project: "@TarsusDemoProject/GateWay -l node -t @tarsus/http -h 127.0.0.1 -p 9811",
+    project: [
+      "@TarsusDemoProject/GateWay -l node -t @tarsus/http -h 127.0.0.1 -p 9810 -w 3",
+      "@TarsusDemoProject/GateWay -l node -t @tarsus/http -h 127.0.0.1 -p 9811 -w 7",
+    ],
+    struct:"src/struct",
+    taro:"src/taro"
   },
 };
